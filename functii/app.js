@@ -55,13 +55,71 @@ const priceWithMonthlyDiscount = (
     dayNumberOfProject - sumOfFullyMonthsWorked * 22;
   let sumOfDayLessThanMonth = restOfTheDayLessThanAMonth * 8 * hourlyRate;
 
-  let sumOfMonth =
+  let sumOfMonth = Math.ceil(
     sumOfFullyMonthsWorked *
-    22 *
-    8 *
-    hourlyRate *
-    ((100 - mounthlyDiscountRate) / 100);
+      22 *
+      8 *
+      hourlyRate *
+      ((100 - mounthlyDiscountRate) / 100)
+  );
 
   return sumOfMonth + sumOfDayLessThanMonth;
 };
-display(priceWithMonthlyDiscount(89, 230, 42));
+// display(priceWithMonthlyDiscount(89, 230, 42));
+
+//Annalyn's Infiltration
+
+const knightIsAwake = false;
+const archerIsAwake = true;
+const prisonerIsAwake = false;
+const petDogIsPresent = false;
+const canExecuteFastAttack = (knightIsAwake) => {
+  if (knightIsAwake === true) return false;
+  else return true;
+};
+
+const canSpy = (knightIsAwake, archerIsAwake, prisonerIsAwake) => {
+  if (
+    knightIsAwake === true ||
+    archerIsAwake === true ||
+    prisonerIsAwake === true
+  )
+    return true;
+  else return false;
+};
+
+const canSignalPrisoner = (archerIsAwake, prisonerIsAwake) => {
+  if (archerIsAwake === false && prisonerIsAwake === true) {
+    return true;
+  } else return false;
+};
+
+const canFreePrisoner = (
+  knightIsAwake,
+  archerIsAwake,
+  prisonerIsAwake,
+  petDogIsPresent
+) => {
+  if (petDogIsPresent === true) {
+    if (archerIsAwake === false) {
+      return true;
+    } else return false;
+  } else if (petDogIsPresent === false) {
+    if (
+      knightIsAwake === false &&
+      archerIsAwake === false &&
+      prisonerIsAwake === true
+    ) {
+      return true;
+    } else return false;
+  }
+};
+
+display(
+  canFreePrisoner(
+    knightIsAwake,
+    archerIsAwake,
+    prisonerIsAwake,
+    petDogIsPresent
+  )
+);
