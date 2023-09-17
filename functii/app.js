@@ -115,11 +115,47 @@ const canFreePrisoner = (
   }
 };
 
-display(
-  canFreePrisoner(
-    knightIsAwake,
-    archerIsAwake,
-    prisonerIsAwake,
-    petDogIsPresent
-  )
-);
+// display(
+//   canFreePrisoner(
+//     knightIsAwake,
+//     archerIsAwake,
+//     prisonerIsAwake,
+//     petDogIsPresent
+//   )
+// );
+
+const dividedByTen = (number) => {
+  if (number % 10 === 0) return true;
+  else return false;
+};
+
+// display(dividedByTen(23));
+
+const tellFortune = (numarCopii, numePartener, locatiaGeografica, locMunca) => {
+  return `Vei fi un **${locMunca}** in **${locatiaGeografica}** casatorit cu **${numePartener}** si vei avea **${numarCopii}** copii.`;
+};
+
+// display(tellFortune(3, "Emanuel", "Italia", "Programator"));
+
+const daysOfWeek = (number) => {
+  switch (number) {
+    case 1:
+      return "Luni";
+    case 2:
+      return "Marti";
+    case 3:
+      return "Miercuri";
+    case 4:
+      return "Joi";
+    case 5:
+      return "Vineri";
+    case 6:
+      return "Sambata";
+    case 7:
+      return "Duminica";
+    default:
+      return "Only 1 to 7";
+  }
+};
+
+display(daysOfWeek(7));
