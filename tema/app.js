@@ -48,7 +48,10 @@ const reverseOfArray = (array) => {
 // console.log(reverseOfArray([1, -5, 20, -34, 16, 29, 36, -4]));
 
 const paragraph = "string de test";
-const regex = /[a,e,i,o,u]/g;
-const found = paragraph.match(regex);
 
-console.log(found.length);
+const findVocals = (paragraph) => {
+  const regex = /[a,e,i,o,u]/g;
+  return (found = paragraph.match(regex));
+};
+
+console.log(findVocals(paragraph).length);
