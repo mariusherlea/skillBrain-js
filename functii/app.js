@@ -154,8 +154,7 @@ const daysOfWeek = (number) => {
     case 7:
       return "Duminica";
     default:
-      return "Only 1 to 7";
+      return "The week have only 7 days";
   }
 };
-
-display(daysOfWeek(7));
+display(daysOfWeek(3));
