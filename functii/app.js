@@ -157,4 +157,4 @@ const daysOfWeek = (number) => {
       return "The week have only 7 days";
   }
 };
-display(daysOfWeek(3));
+// display(daysOfWeek(3));

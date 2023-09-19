@@ -54,4 +54,4 @@ const findVocals = (paragraph) => {
   return (found = paragraph.match(regex));
 };
 
-console.log(findVocals(paragraph).length);
+console.log(findVocals(paragraph));
