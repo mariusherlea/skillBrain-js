@@ -34,7 +34,8 @@
 //https://exercism.org/tracks/javascript/exercises/mixed-juices a try
 
 const limesToCut = (wedgesNeeded, limesStock) => {
-  let i = 0;
+  let len = limesStock.length;
+  let z = 1;
   console.log("required: ", wedgesNeeded);
   for (let i = 0; i < limesStock.length; i++) {
     if (limesStock[i] === "small") {
@@ -50,15 +51,14 @@ const limesToCut = (wedgesNeeded, limesStock) => {
     sumOfLime += limesStock[i];
   }
   console.log("array of lime:", limesStock);
-  console.log("limesStock: ", sumOfLime);
-  console.log("length of lime array", limesStock.length);
+  console.log("sumOfLime: ", sumOfLime);
+  console.log("length of lime array", len);
 
-  if (wedgesNeeded > sumOfLime) console.log("need more that we have");
-  else if (wedgesNeeded == sumOfLime) console.log("suntem perfecti");
+  if (wedgesNeeded > sumOfLime) return "mai trebuie";
+  else if (wedgesNeeded === sumOfLime) return "suntem tante pe tante";
   else {
-    if (sumOfLime - wedgesNeeded < limesStock[limesStock.length]) {
-      console.log(limesStock[limesStock.length]);
-    } else console.log("dracu stie");
+    return null;
   }
 };
-limesToCut(30, ["small", "small", "large", "medium", "small"]); //6+6+10+8+6=36
+
+console.log(limesToCut(34, ["small", "small", "large", "medium", "small"])); //6+6+10+8+6=36;
