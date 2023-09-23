@@ -13,25 +13,28 @@
 // const result = countOfDivisors(2, 10);
 // console.log(result);
 
-// const timeToMixJuice = (nameOfJuice) => {
-//   switch (nameOfJuice) {
-//     case "Pure Strawberry Joy":
-//       return "0.5 minutes";
-//     case "Energizer":
-//       return "1.5 minutes";
-//     case "Green Garden":
-//       return "1.5 minutes";
-//     case "Tropical Island":
-//       return "3 minutes";
-//     default:
-//       return "2.5 minutes";
-//   }
-// };
+//https://exercism.org/tracks/javascript/exercises/mixed-juices a try
+//Determine how long it takes to mix a juice
+
+const timeToMixJuice = (nameOfJuice) => {
+  switch (nameOfJuice) {
+    case "Pure Strawberry Joy":
+      return 0.5;
+    case "Energizer":
+      return 1.5;
+    case "Green Garden":
+      return 1.5;
+    case "Tropical Island":
+      return 3;
+    default:
+      return 2.5;
+  }
+};
 
 // console.log(timeToMixJuice("Tropical Island"));
 // console.log(timeToMixJuice("Berries & Lime"));
 
-//https://exercism.org/tracks/javascript/exercises/mixed-juices a try
+//Replenish the lime wedge supply
 
 const limesToCut = (wedgesNeeded, limesStock) => {
   let len = limesStock.length;
@@ -58,4 +61,18 @@ const limesToCut = (wedgesNeeded, limesStock) => {
   console.log(sum, i);
 };
 
-limesToCut(13, ["small", "small", "large", "medium", "small"]);
+// limesToCut(13, ["small", "small", "large", "medium", "small"]);
+
+//Finish up the shift
+const remainingOrders = (timeRemaining, orderRemaining) => {
+  console.log(timeRemaining);
+  let i = 0;
+  while (timeRemaining > 0 && orderRemaining) {
+    timeRemaining -= timeToMixJuice(orderRemaining[i]);
+    orderRemaining.shift();
+
+    i++;
+  }
+  console.log(orderRemaining);
+};
+remainingOrders(3, ["Energizer", "All or Nothing", "Green Garden"]);
