@@ -35,8 +35,8 @@
 
 const limesToCut = (wedgesNeeded, limesStock) => {
   let len = limesStock.length;
-  let z = 1;
-  console.log("required: ", wedgesNeeded);
+  let sum = 0;
+  let i = 0;
   for (let i = 0; i < limesStock.length; i++) {
     if (limesStock[i] === "small") {
       limesStock[i] = 6;
@@ -46,19 +46,16 @@ const limesToCut = (wedgesNeeded, limesStock) => {
       limesStock[i] = 10;
     }
   }
-  let sumOfLime = 0;
-  for (let i = 0; i < limesStock.length; i++) {
-    sumOfLime += limesStock[i];
-  }
+  console.log("required: ", wedgesNeeded);
   console.log("array of lime:", limesStock);
-  console.log("sumOfLime: ", sumOfLime);
-  console.log("length of lime array", len);
+  console.log("lenght of array", len);
 
-  if (wedgesNeeded > sumOfLime) return "mai trebuie";
-  else if (wedgesNeeded === sumOfLime) return "suntem tante pe tante";
-  else {
-    return null;
+  while (i < 5 && sum < wedgesNeeded) {
+    sum += limesStock[i];
+    i++;
   }
+
+  console.log(sum, i);
 };
 
-console.log(limesToCut(34, ["small", "small", "large", "medium", "small"])); //6+6+10+8+6=36;
+limesToCut(38, ["small", "small", "large", "medium", "small"]);
