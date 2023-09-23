@@ -58,4 +58,4 @@ const limesToCut = (wedgesNeeded, limesStock) => {
   console.log(sum, i);
 };
 
-limesToCut(38, ["small", "small", "large", "medium", "small"]);
+limesToCut(13, ["small", "small", "large", "medium", "small"]);
