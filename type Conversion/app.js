@@ -30,4 +30,23 @@ luckyNumber = (str) => {
   if (str === reversed) return "palindrome";
   else return null;
 };
-console.log(luckyNumber(1442));
+// console.log(luckyNumber(1441));
+
+//error message for invalid user input
+
+errorMesage = (numberS) => {
+  if (numberS.length === 0) return "Required field";
+  else {
+    switch (typeof numberS) {
+      case "string":
+        return "Must be a number besides 0";
+        break;
+
+      case "number":
+        if (numberS > 0) return "``";
+        else return "besides 0";
+        break;
+    }
+  }
+};
+console.log(errorMesage(1));
