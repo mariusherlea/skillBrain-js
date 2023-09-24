@@ -18,7 +18,6 @@ const removeCharFromString = (stringS1) => {
 };
 // twoSum([1, 2, 3], [0, 7]);
 // Determine if a number is a palindrome
-<<<<<<< HEAD
 
 luckyNumber = (str) => {
   let stringNumber = str.toString();
@@ -32,5 +31,3 @@ luckyNumber = (str) => {
   else return null;
 };
 console.log(luckyNumber(1442));
-=======
->>>>>>> 0c6344680e139dbd4094d3bb2ed876d482f3d02a
