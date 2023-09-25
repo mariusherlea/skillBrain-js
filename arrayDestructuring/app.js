@@ -38,4 +38,4 @@ const insertFaceCards = (deck) => {
   let result = [card1, "jack", "queen", "king", card2, card3, card4];
   return result;
 };
-console.log(insertFaceCards(deck5));
+// console.log(insertFaceCards(deck5));
