@@ -10,10 +10,17 @@ doesStackIncludeCard = (values, card) => {
 };
 // console.log(doesStackIncludeCard(values2, 3));
 const valies = [3, 2, 6, 4, 8];
-const isOdd = (item) => item % 2 === 1;
+const isEachCardEven = (item) => item % 2 === 1;
 
-// console.log(valies.some(isOdd));
+// console.log(valies.every(isEachCardEven));
 
-const getFirstEvenCardPosition = (item) => item[1] % 2 !== 1;
+const doesStackIncludeOddCard = (item) => item[1] % 2 === 0;
 
-console.log(getFirstEvenCardPosition([5, 2, 3, 1]));
+// console.log(doesStackIncludeOddCard([3, 2, 6, 4, 8]));
+
+const numbers = [4, 2, 8, 7, 9];
+const getFirstOddCard = numbers.find((num) => num % 2 !== 0);
+// console.log(getFirstOddCard);
+const numbers2 = [5, 2, 3, 1];
+const getFirstEvenCardPosition = numbers2.findIndex((num) => num % 2 === 0);
+console.log(getFirstEvenCardPosition);
