@@ -37,31 +37,33 @@ const timeToMixJuice = (nameOfJuice) => {
 //Replenish the lime wedge supply
 
 const limesToCut = (wedgesNeeded, limesStock) => {
-  let len = limesStock.length;
-  let sum = 0;
-  let i = 0;
-  for (let i = 0; i < limesStock.length; i++) {
-    if (limesStock[i] === "small") {
-      limesStock[i] = 6;
-    } else if (limesStock[i] === "medium") {
-      limesStock[i] = 8;
-    } else if (limesStock[i] === "large") {
-      limesStock[i] = 10;
+  let count = 0;
+  while (wedgesNeeded >= 0) {
+    for (let toCut of limesStock) {
+      switch (toCut) {
+        case "small":
+          wedgesNeeded -= 6;
+          limesStock.shift();
+          count++;
+          break;
+        case "medium":
+          wedgesNeeded -= 8;
+          limesStock.shift();
+          count++;
+          break;
+        case "large":
+          wedgesNeeded -= 10;
+          limesStock.shift();
+          count++;
+          break;
+      }
     }
   }
-  console.log("required: ", wedgesNeeded);
-  console.log("array of lime:", limesStock);
-  console.log("lenght of array", len);
 
-  while (i < 5 && sum < wedgesNeeded) {
-    sum += limesStock[i];
-    i++;
-  }
-
-  console.log(sum, i);
+  console.log(count);
 };
 
-// limesToCut(13, ["small", "small", "large", "medium", "small"]);
+limesToCut(25, ["small", "small", "large", "medium", "small"]);
 
 //Finish up the shift
 const remainingOrders = (timeRemaining, orderRemaining) => {
@@ -70,9 +72,8 @@ const remainingOrders = (timeRemaining, orderRemaining) => {
   while (timeRemaining > 0 && orderRemaining) {
     timeRemaining -= timeToMixJuice(orderRemaining[i]);
     orderRemaining.shift();
-
     i++;
   }
   console.log(orderRemaining);
 };
-remainingOrders(3, ["Energizer", "All or Nothing", "Green Garden"]);
+// remainingOrders(5, ["Energizer", "All or Nothing", "Green Garden"]);
