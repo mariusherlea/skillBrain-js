@@ -38,42 +38,67 @@ const timeToMixJuice = (nameOfJuice) => {
 
 const limesToCut = (wedgesNeeded, limesStock) => {
   let count = 0;
-  while (wedgesNeeded >= 0) {
-    for (let toCut of limesStock) {
-      switch (toCut) {
-        case "small":
-          wedgesNeeded -= 6;
-          limesStock.shift();
-          count++;
-          break;
-        case "medium":
-          wedgesNeeded -= 8;
-          limesStock.shift();
-          count++;
-          break;
-        case "large":
-          wedgesNeeded -= 10;
-          limesStock.shift();
-          count++;
-          break;
-      }
+  console.log(
+    `wedgesNeeded ${wedgesNeeded}, limeStock [${limesStock}], count ${count}`
+  );
+  while (wedgesNeeded > 0 && limesStock.length > 0) {
+    let toCut = limesStock[0];
+    switch (toCut) {
+      case "large":
+        wedgesNeeded -= 10;
+        limesStock.shift();
+        console.log(
+          `wedgesNeeded ${wedgesNeeded}, limeStock [${limesStock}], count ${count}`
+        );
+        count++;
+        break;
+      case "medium":
+        wedgesNeeded -= 8;
+        limesStock.shift();
+        console.log(
+          `wedgesNeeded ${wedgesNeeded}, limeStock [${limesStock}], count ${count}`
+        );
+        count++;
+        break;
+      case "small":
+        wedgesNeeded -= 6;
+        limesStock.shift();
+        count++;
+        console.log(
+          `wedgesNeeded ${wedgesNeeded}, limeStock [${limesStock}], count ${count}`
+        );
+        break;
     }
   }
 
   console.log(count);
 };
 
-limesToCut(25, ["small", "small", "large", "medium", "small"]);
+// limesToCut(25, ["small", "small", "large", "medium", "small"]);
 
 //Finish up the shift
 const remainingOrders = (timeRemaining, orderRemaining) => {
-  console.log(timeRemaining);
-  let i = 0;
-  while (timeRemaining > 0 && orderRemaining) {
-    timeRemaining -= timeToMixJuice(orderRemaining[i]);
-    orderRemaining.shift();
-    i++;
+  while (timeRemaining > 0) {
+    let order = orderRemaining[0];
+    switch (order) {
+      case "Energizer":
+        timeRemaining -= 1.5;
+        orderRemaining.shift();
+        console.log(timeRemaining, orderRemaining);
+        break;
+      case "All or Nothing":
+        timeRemaining -= 2.5;
+        orderRemaining.shift();
+        console.log(timeRemaining, orderRemaining);
+        break;
+      case "Green Garden":
+        timeRemaining -= 2.5;
+        orderRemaining.shift();
+        console.log(timeRemaining, orderRemaining);
+        break;
+    }
   }
   console.log(orderRemaining);
 };
-// remainingOrders(5, ["Energizer", "All or Nothing", "Green Garden"]);
+
+remainingOrders(5, ["Energizer", "All or Nothing", "Green Garden"]);
