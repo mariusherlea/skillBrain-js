@@ -173,3 +173,13 @@ const addPlayer = (existingObject, key, value) => {
 };
 
 addPlayer({ TheBestEver: 1000 }, "Vasile", 10);
+
+const removePlayer = (existingObject) => {
+  if (highScoreBoard.hasOwnProperty([Object.keys(existingObject)])) {
+    delete highScoreBoard[[Object.keys(existingObject)]];
+  } else {
+    console.log("The key-value pair does not exist.");
+  }
+  console.log(highScoreBoard);
+};
+removePlayer({ TheBestEver: 1000 });
