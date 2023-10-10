@@ -172,7 +172,7 @@ const addPlayer = (existingObject, key, value) => {
   console.log(highScoreBoard);
 };
 
-// addPlayer({ TheBestEver: 1000 }, "Vasile", 10);
+addPlayer({ TheBestEver: 1000 }, "Vasile", 10);
 
 const removePlayer = (existingObject) => {
   if (highScoreBoard.hasOwnProperty([Object.keys(existingObject)])) {
@@ -196,3 +196,11 @@ const updateScore = (existingObject, score) => {
 };
 
 // updateScore({ TheBestEver: 1000 }, 200);
+const applyMondayBonus = () => {
+  Object.keys(highScoreBoard).forEach((item) => {
+    highScoreBoard[item] = highScoreBoard[item] + 100;
+  });
+  console.log(highScoreBoard);
+};
+
+applyMondayBonus();
