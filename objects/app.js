@@ -159,7 +159,7 @@ const createScoreBoard = () => {
     TheBestEver: 1000,
   };
 
-  // return highScoreBoard;
+  return highScoreBoard;
 };
 createScoreBoard();
 
@@ -172,7 +172,7 @@ const addPlayer = (existingObject, key, value) => {
   console.log(highScoreBoard);
 };
 
-addPlayer({ TheBestEver: 1000 }, "Vasile", 10);
+// addPlayer({ TheBestEver: 1000 }, "Vasile", 10);
 
 const removePlayer = (existingObject) => {
   if (highScoreBoard.hasOwnProperty([Object.keys(existingObject)])) {
@@ -182,4 +182,17 @@ const removePlayer = (existingObject) => {
   }
   console.log(highScoreBoard);
 };
-removePlayer({ TheBestEver: 1000 });
+// removePlayer({ TheBestEver: 1000 });
+
+const updateScore = (existingObject, score) => {
+  if (highScoreBoard.hasOwnProperty([Object.keys(existingObject)])) {
+    let ceva = Object.values(existingObject)[0];
+    ceva += score;
+    highScoreBoard[Object.keys(existingObject)] = ceva;
+  } else {
+    console.log("The key-value pair does not exist.");
+  }
+  console.log(highScoreBoard);
+};
+
+// updateScore({ TheBestEver: 1000 }, 200);
