@@ -203,4 +203,6 @@ const applyMondayBonus = () => {
   console.log(highScoreBoard);
 };
 
-applyMondayBonus();
+// applyMondayBonus();
+
+const normalize = () => {};
