@@ -7,16 +7,14 @@ const createVisitor = (visitorName, visitoAge, ticketId) => {
   visitors.push(visitor);
   console.log(visitors);
 };
-createVisitor("Marius", 46, "H32AZ123");
-createVisitor("Ion", 43, "H32AA423");
+// createVisitor("Marius", 46, "H32AZ123");
+// createVisitor("Ion", 43, "H32AA423");
 
 const revokeTicket = (visitorName) => {
   for (i of visitors) {
-    if (i.name === visitorName) {
-      i.ticketId = null;
-    }
+    if (i.name === visitorName) i.ticketId = null;
   }
   console.log(visitors);
 };
-revokeTicket("Marius");
-revokeTicket("Vasile");
+// revokeTicket("Marius");
+// revokeTicket("Vasile");
