@@ -20,10 +20,14 @@ const timeToMixJuice = (nameOfJuice) => {
   switch (nameOfJuice) {
     case "Pure Strawberry Joy":
       return 0.5;
+      break;
     case "Energizer":
-      return 1.5;
     case "Green Garden":
       return 1.5;
+      break;
+    case "All or nothing":
+      return 5;
+      break;
     case "Tropical Island":
       return 3;
     default:
@@ -31,7 +35,7 @@ const timeToMixJuice = (nameOfJuice) => {
   }
 };
 
-// console.log(timeToMixJuice("Tropical Island"));
+// console.log(timeToMixJuice("Green Garden"));
 // console.log(timeToMixJuice("Berries & Lime"));
 
 //Replenish the lime wedge supply
@@ -87,7 +91,7 @@ const remainingOrders = (timeRemaining, orderRemaining) => {
         console.log(timeRemaining, orderRemaining);
         break;
       case "All or Nothing":
-        timeRemaining -= 2.5;
+        timeRemaining -= 5;
         orderRemaining.shift();
         console.log(timeRemaining, orderRemaining);
         break;
